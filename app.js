@@ -216,17 +216,18 @@ renderArticles = function (articles) {
 
   `).join("");
 
-  container.querySelectorAll(".card").forEach((card, index) => {
+container.querySelectorAll(".card").forEach((card, index) => {
 
-    card.addEventListener("click", () => {
-      const articleURL = currentArticles[index].link;
-window.location.href =
-  "arcmobile2://search?query=" + encodeURIComponent(articleURL);
-    });
+  card.addEventListener("click", () => {
+
+    const articleURL = currentArticles[index].link;
+
+    window.location.href =
+      "arc://open?url=" + encodeURIComponent(articleURL);
 
   });
 
-};
+});
 
 createLayout();
 loadCategory("world");
