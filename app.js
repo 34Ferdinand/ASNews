@@ -219,7 +219,9 @@ renderArticles = function (articles) {
   container.querySelectorAll(".card").forEach((card, index) => {
 
     card.addEventListener("click", () => {
-      window.open(currentArticles[index].link, "_blank");
+      const articleURL = currentArticles[index].link;
+window.location.href =
+  "arcmobile2://search?query=" + encodeURIComponent(articleURL);
     });
 
   });
